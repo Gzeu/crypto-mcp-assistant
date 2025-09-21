@@ -1,0 +1,600 @@
+# Crypto MCP Assistant - Git Ignore Configuration
+
+# =============================================================================
+# ENVIRONMENT & SECRETS
+# =============================================================================
+
+# Environment variables (CRITICAL - contains API keys)
+.env
+.env.local
+.env.production
+.env.staging
+.env.development
+.env.test
+
+# Backup environment files
+.env.backup
+.env.bak
+.env.*
+
+# API Keys and secrets
+secrets/
+keys/
+credentials/
+*.key
+*.pem
+*.p12
+*.pfx
+
+# =============================================================================
+# PYTHON
+# =============================================================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# poetry
+poetry.lock
+
+# pdm
+.pdm.toml
+
+# PEP 582
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# =============================================================================
+# DATA & LOGS
+# =============================================================================
+
+# Application logs
+logs/
+*.log
+*.log.*
+log/
+
+# Data files
+data/
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+
+# Temporary data
+temp/
+tmp/
+*.tmp
+*.temp
+
+# Backup files
+backups/
+*.backup
+*.bak
+*.old
+
+# CSV/Excel data files (potentially sensitive)
+*.csv
+*.xlsx
+*.xls
+
+# Trading data
+trades/
+positions/
+portfolio/
+market_data/
+
+# =============================================================================
+# DOCKER & DEPLOYMENT
+# =============================================================================
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+docker-compose.override.yaml
+docker-compose.prod.yml
+docker-compose.dev.yml
+
+# Kubernetes
+*.kubeconfig
+kubernetes/secrets/
+
+# =============================================================================
+# IDE & EDITORS
+# =============================================================================
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# VS Code
+.vscode/
+
+# =============================================================================
+# OPERATING SYSTEM
+# =============================================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# =============================================================================
+# NODE.JS & NPM (for MCP servers)
+# =============================================================================
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# nyc test coverage
+.nyc_output
+
+# Grunt intermediate storage
+.grunt
+
+# Bower dependency directory
+bower_components
+
+# node-waf configuration
+.lock-wscript
+
+# Compiled binary addons
+build/Release
+
+# Dependency directories
+jspm_packages/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional stylelint cache
+.stylelintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variable files
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# parcel-bundler cache
+.cache
+.parcel-cache
+
+# Next.js build output
+.next
+out
+
+# Nuxt.js build / generate output
+.nuxt
+dist
+
+# Gatsby files
+.cache/
+public
+
+# Storybook build outputs
+.out
+.storybook-out
+storybook-static
+
+# Temporary folders
+temp/
+.tmp/
+
+# =============================================================================
+# STREAMLIT
+# =============================================================================
+
+# Streamlit
+.streamlit/
+streamlit_cache/
+
+# =============================================================================
+# JUPYTER & NOTEBOOKS
+# =============================================================================
+
+*.ipynb
+.ipynb_checkpoints/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# =============================================================================
+# MONITORING & ANALYTICS
+# =============================================================================
+
+# Prometheus data
+prometheus_data/
+
+# Grafana data
+grafana_data/
+
+# =============================================================================
+# APPLICATION SPECIFIC
+# =============================================================================
+
+# Configuration overrides
+config/local.yaml
+config/local.yml
+config/local.json
+config/production.yaml
+config/production.yml
+config/production.json
+config/staging.yaml
+config/staging.yml
+config/staging.json
+
+# Local development configs
+config/dev.yaml
+config/dev.yml
+config/dev.json
+
+# User-specific configs
+config/user_*.yaml
+config/user_*.yml
+config/user_*.json
+
+# Testing configs
+config/test_*.yaml
+config/test_*.yml
+config/test_*.json
+
+# MCP server configs (if they contain secrets)
+src/mcp/local_*.py
+src/mcp/prod_*.py
+
+# Trading history (sensitive data)
+trading_history/
+orders/
+executions/
+
+# Cached market data
+cache/
+*.cache
+
+# Performance monitoring
+performance/
+metrics/
+
+# User sessions
+sessions/
+
+# Temporary analysis files
+analysis_*.csv
+analysis_*.json
+report_*.pdf
+
+# Generated documentation
+docs/build/
+docs/_build/
+
+# =============================================================================
+# SECURITY & COMPLIANCE
+# =============================================================================
+
+# Security scanning results
+security_reports/
+vulnerability_reports/
+
+# Compliance reports
+compliance/
+audit/
+
+# Private keys and certificates
+*.key
+*.crt
+*.cert
+*.pem
+*.p12
+*.pfx
+
+# SSH keys
+id_rsa
+id_dsa
+id_ecdsa
+id_ed25519
+*.pub
+
+# GPG keys
+*.gpg
+*.asc
+
+# =============================================================================
+# TESTING
+# =============================================================================
+
+# Test results
+test_results/
+test_reports/
+
+# Test data
+test_data/
+fixtures/
+mocks/
+
+# Performance tests
+load_test_results/
+
+# =============================================================================
+# MISCELLANEOUS
+# =============================================================================
+
+# Editor swap files
+*.swp
+*.swo
+
+# Archive files
+*.zip
+*.tar.gz
+*.tar.bz2
+*.rar
+*.7z
+
+# Large files
+*.iso
+*.dmg
+*.img
+
+# Generated files
+*_generated.py
+*_generated.js
+*_generated.yaml
+
+# Local scripts
+local_*.sh
+local_*.py
+local_*.js
+
+# Debug files
+debug/
+*.debug
+
+# Profiling files
+*.prof
+*.profile
+
+# Core dumps
+core
+core.*
+
+# =============================================================================
+# ALLOW CERTAIN FILES (negative patterns)
+# =============================================================================
+
+# Allow example configs (but not real ones)
+!.env.example
+!config/example_*.yaml
+!config/example_*.yml
+!config/example_*.json
+
+# Allow certain test files
+!tests/fixtures/example_*.json
+!tests/data/sample_*.csv
+
+# Allow documentation configs
+!docs/conf.py
+!docs/requirements.txt
+
+# Allow CI/CD configs
+!.github/
+!.gitlab-ci.yml
+!.travis.yml
+!Jenkinsfile
