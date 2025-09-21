@@ -1,0 +1,286 @@
+{
+  "crypto_symbols": {
+    "major_pairs": {
+      "BTCUSDT": {
+        "name": "Bitcoin",
+        "category": "major",
+        "min_notional": 10,
+        "tick_size": 0.01,
+        "step_size": 0.00001,
+        "max_position_usd": 50000,
+        "leverage_max": 20,
+        "enabled": true,
+        "priority": 1
+      },
+      "ETHUSDT": {
+        "name": "Ethereum",
+        "category": "major",
+        "min_notional": 10,
+        "tick_size": 0.01,
+        "step_size": 0.0001,
+        "max_position_usd": 30000,
+        "leverage_max": 20,
+        "enabled": true,
+        "priority": 2
+      },
+      "BNBUSDT": {
+        "name": "Binance Coin",
+        "category": "major",
+        "min_notional": 10,
+        "tick_size": 0.01,
+        "step_size": 0.001,
+        "max_position_usd": 20000,
+        "leverage_max": 15,
+        "enabled": true,
+        "priority": 3
+      }
+    },
+    "altcoins": {
+      "EGLDUSDT": {
+        "name": "MultiversX",
+        "category": "altcoin",
+        "min_notional": 10,
+        "tick_size": 0.001,
+        "step_size": 0.01,
+        "max_position_usd": 15000,
+        "leverage_max": 10,
+        "enabled": true,
+        "priority": 4,
+        "romanian_focus": true
+      },
+      "ADAUSDT": {
+        "name": "Cardano",
+        "category": "altcoin",
+        "min_notional": 10,
+        "tick_size": 0.0001,
+        "step_size": 1,
+        "max_position_usd": 10000,
+        "leverage_max": 10,
+        "enabled": true,
+        "priority": 5
+      },
+      "SOLUSDT": {
+        "name": "Solana",
+        "category": "altcoin",
+        "min_notional": 10,
+        "tick_size": 0.01,
+        "step_size": 0.01,
+        "max_position_usd": 12000,
+        "leverage_max": 10,
+        "enabled": true,
+        "priority": 6
+      },
+      "DOTUSDT": {
+        "name": "Polkadot",
+        "category": "altcoin",
+        "min_notional": 10,
+        "tick_size": 0.001,
+        "step_size": 0.1,
+        "max_position_usd": 8000,
+        "leverage_max": 10,
+        "enabled": true,
+        "priority": 7
+      },
+      "LINKUSDT": {
+        "name": "Chainlink",
+        "category": "altcoin",
+        "min_notional": 10,
+        "tick_size": 0.001,
+        "step_size": 0.1,
+        "max_position_usd": 8000,
+        "leverage_max": 10,
+        "enabled": true,
+        "priority": 8
+      },
+      "MATICUSDT": {
+        "name": "Polygon",
+        "category": "altcoin",
+        "min_notional": 10,
+        "tick_size": 0.0001,
+        "step_size": 1,
+        "max_position_usd": 6000,
+        "leverage_max": 10,
+        "enabled": true,
+        "priority": 9
+      },
+      "AVAXUSDT": {
+        "name": "Avalanche",
+        "category": "altcoin",
+        "min_notional": 10,
+        "tick_size": 0.01,
+        "step_size": 0.01,
+        "max_position_usd": 8000,
+        "leverage_max": 10,
+        "enabled": true,
+        "priority": 10
+      },
+      "ATOMUSDT": {
+        "name": "Cosmos",
+        "category": "altcoin",
+        "min_notional": 10,
+        "tick_size": 0.001,
+        "step_size": 0.01,
+        "max_position_usd": 6000,
+        "leverage_max": 10,
+        "enabled": true,
+        "priority": 11
+      }
+    },
+    "defi_tokens": {
+      "UNIUSDT": {
+        "name": "Uniswap",
+        "category": "defi",
+        "min_notional": 10,
+        "tick_size": 0.001,
+        "step_size": 0.1,
+        "max_position_usd": 5000,
+        "leverage_max": 8,
+        "enabled": false,
+        "priority": 20
+      },
+      "AAVEUSDT": {
+        "name": "Aave",
+        "category": "defi",
+        "min_notional": 10,
+        "tick_size": 0.01,
+        "step_size": 0.001,
+        "max_position_usd": 5000,
+        "leverage_max": 8,
+        "enabled": false,
+        "priority": 21
+      },
+      "COMPUSDT": {
+        "name": "Compound",
+        "category": "defi",
+        "min_notional": 10,
+        "tick_size": 0.01,
+        "step_size": 0.001,
+        "max_position_usd": 3000,
+        "leverage_max": 5,
+        "enabled": false,
+        "priority": 22
+      }
+    },
+    "meme_coins": {
+      "DOGEUSDT": {
+        "name": "Dogecoin",
+        "category": "meme",
+        "min_notional": 10,
+        "tick_size": 0.00001,
+        "step_size": 1,
+        "max_position_usd": 2000,
+        "leverage_max": 5,
+        "enabled": false,
+        "priority": 30,
+        "high_volatility": true
+      },
+      "SHIBUSDT": {
+        "name": "Shiba Inu",
+        "category": "meme",
+        "min_notional": 10,
+        "tick_size": 0.00000001,
+        "step_size": 10000,
+        "max_position_usd": 1000,
+        "leverage_max": 3,
+        "enabled": false,
+        "priority": 31,
+        "high_volatility": true
+      }
+    }
+  },
+  "trading_pairs_config": {
+    "default_settings": {
+      "min_volume_24h_usd": 1000000,
+      "max_spread_percent": 0.5,
+      "min_market_cap_usd": 100000000,
+      "max_price_deviation_percent": 10
+    },
+    "risk_categories": {
+      "low_risk": {
+        "symbols": ["BTCUSDT", "ETHUSDT", "BNBUSDT"],
+        "max_position_percent": 20,
+        "default_leverage": 3
+      },
+      "medium_risk": {
+        "symbols": ["EGLDUSDT", "ADAUSDT", "SOLUSDT", "DOTUSDT", "LINKUSDT"],
+        "max_position_percent": 15,
+        "default_leverage": 2
+      },
+      "high_risk": {
+        "symbols": ["MATICUSDT", "AVAXUSDT", "ATOMUSDT"],
+        "max_position_percent": 10,
+        "default_leverage": 1
+      },
+      "very_high_risk": {
+        "symbols": ["DOGEUSDT", "SHIBUSDT"],
+        "max_position_percent": 5,
+        "default_leverage": 1
+      }
+    },
+    "timeframe_preferences": {
+      "scalping": {
+        "timeframes": ["1m", "5m"],
+        "preferred_symbols": ["BTCUSDT", "ETHUSDT", "BNBUSDT"]
+      },
+      "day_trading": {
+        "timeframes": ["15m", "1h"],
+        "preferred_symbols": ["BTCUSDT", "ETHUSDT", "EGLDUSDT", "ADAUSDT", "SOLUSDT"]
+      },
+      "swing_trading": {
+        "timeframes": ["4h", "1d"],
+        "preferred_symbols": ["BTCUSDT", "ETHUSDT", "EGLDUSDT", "DOTUSDT", "LINKUSDT"]
+      }
+    }
+  },
+  "market_sessions": {
+    "asian_session": {
+      "start_hour": 0,
+      "end_hour": 8,
+      "timezone": "UTC",
+      "active_symbols": ["BTCUSDT", "ETHUSDT", "BNBUSDT"],
+      "volatility_factor": 0.8
+    },
+    "european_session": {
+      "start_hour": 8,
+      "end_hour": 16,
+      "timezone": "UTC",
+      "active_symbols": ["BTCUSDT", "ETHUSDT", "EGLDUSDT", "ADAUSDT"],
+      "volatility_factor": 1.0
+    },
+    "american_session": {
+      "start_hour": 16,
+      "end_hour": 24,
+      "timezone": "UTC",
+      "active_symbols": ["BTCUSDT", "ETHUSDT", "SOLUSDT", "LINKUSDT"],
+      "volatility_factor": 1.2
+    }
+  },
+  "special_events": {
+    "bitcoin_halving": {
+      "next_date": "2028-04-01",
+      "affected_symbols": ["BTCUSDT"],
+      "volatility_increase": 2.0
+    },
+    "ethereum_updates": {
+      "affected_symbols": ["ETHUSDT"],
+      "monitor_news": true
+    },
+    "multiversx_events": {
+      "affected_symbols": ["EGLDUSDT"],
+      "monitor_news": true,
+      "romanian_community": true
+    }
+  },
+  "correlation_matrix": {
+    "BTCUSDT": {
+      "ETHUSDT": 0.85,
+      "EGLDUSDT": 0.75,
+      "ADAUSDT": 0.80
+    },
+    "ETHUSDT": {
+      "BTCUSDT": 0.85,
+      "EGLDUSDT": 0.70,
+      "SOLUSDT": 0.75
+    }
+  }
+}
