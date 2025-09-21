@@ -1,0 +1,276 @@
+# =============================================================================
+# CRYPTO MCP ASSISTANT - TRADING CONFIGURATION
+# =============================================================================
+
+# General Settings
+app_name: "Crypto MCP Assistant"
+version: "1.0.0"
+environment: "development"  # development, staging, production
+
+# =============================================================================
+# TRADING PARAMETERS
+# =============================================================================
+
+trading:
+  # Risk Management
+  risk:
+    max_risk_per_trade: 2.0        # % din capital per trade
+    max_daily_risk: 10.0           # % pierdere maxima zilnica
+    max_positions: 5               # Numar maxim pozitii simultane
+    stop_loss_pct: 2.0            # % stop loss implicit
+    take_profit_pct: 6.0          # % take profit implicit
+    risk_reward_ratio: 3.0         # Raport risc/recompensa minim
+    
+  # Position Sizing
+  position:
+    min_order_size: 10            # USDT minim per ordine
+    max_position_size: 1000       # USDT maxim per pozitie
+    base_currency: "USDT"
+    use_kelly_criterion: true     # Foloseste formula Kelly
+    
+  # Order Management
+  orders:
+    order_type: "limit"          # market, limit, stop_limit
+    fill_timeout: 300            # Secunde pentru fill
+    partial_fills: true          # Accepta fill-uri partiale
+    post_only: true             # Doar maker orders
+
+# =============================================================================
+# MARKET ANALYSIS
+# =============================================================================
+
+analysis:
+  # Timeframes
+  timeframes:
+    primary: "5m"               # Timeframe principal
+    confirmation: ["15m", "1h", "4h"]  # Timeframes confirmare
+    long_term: ["1d", "1w"]    # Timeframes trend lung
+    
+  # Technical Indicators
+  indicators:
+    rsi:
+      period: 14
+      overbought: 70
+      oversold: 30
+      
+    macd:
+      fast: 12
+      slow: 26
+      signal: 9
+      
+    bollinger_bands:
+      period: 20
+      std_dev: 2
+      
+    moving_averages:
+      ema_short: 9
+      ema_long: 21
+      sma: 50
+      
+    volume:
+      threshold_multiplier: 1.5   # Pentru detectare volum anormal
+      
+  # Pattern Recognition
+  patterns:
+    enable_candlestick: true
+    enable_chart_patterns: true
+    enable_support_resistance: true
+    confidence_threshold: 0.7
+
+# =============================================================================
+# SYMBOLS & MARKETS
+# =============================================================================
+
+markets:
+  # Simboluri prioritare
+  primary_symbols:
+    - "BTCUSDT"
+    - "ETHUSDT"
+    - "EGLDUSDT"
+    
+  # Simboluri secundare
+  secondary_symbols:
+    - "ADAUSDT"
+    - "SOLUSDT"
+    - "DOTUSDT"
+    - "LINKUSDT"
+    - "MATICUSDT"
+    - "AVAXUSDT"
+    - "ATOMUSDT"
+    
+  # Filtre de piata
+  filters:
+    min_volume_24h: 1000000     # Volum minim 24h in USDT
+    min_market_cap: 100000000   # Market cap minim
+    max_spread_pct: 0.5         # Spread maxim bid/ask
+    
+  # Blacklist
+  blacklisted_symbols:
+    - "USDCUSDT"  # Stablecoins
+    - "BUSDUSDT"
+
+# =============================================================================
+# STRATEGIES
+# =============================================================================
+
+strategies:
+  # Strategy Selection
+  active_strategies:
+    - "momentum_scalping"
+    - "mean_reversion"
+    - "breakout_trading"
+    
+  # Momentum Scalping (1m-5m)
+  momentum_scalping:
+    enabled: true
+    timeframes: ["1m", "5m"]
+    min_momentum: 0.5
+    max_hold_time: 300          # secunde
+    profit_target: 0.5          # %
+    stop_loss: 0.3             # %
+    
+  # Mean Reversion (15m-1h)
+  mean_reversion:
+    enabled: true
+    timeframes: ["15m", "1h"]
+    bb_oversold_threshold: 0.1
+    rsi_threshold: 30
+    max_hold_time: 3600        # secunde
+    
+  # Breakout Trading (4h-1d)
+  breakout_trading:
+    enabled: true
+    timeframes: ["4h", "1d"]
+    volume_confirmation: true
+    min_breakout_strength: 0.02 # %
+    
+  # DCA Strategy
+  dca:
+    enabled: true
+    interval_hours: 24
+    symbols: ["BTCUSDT", "ETHUSDT"]
+    base_amount: 50            # USDT
+    max_orders: 10
+    price_deviation: 5.0       # % pentru urmatoarea cumparare
+
+# =============================================================================
+# NOTIFICATIONS
+# =============================================================================
+
+notifications:
+  # Channels
+  channels:
+    discord:
+      enabled: true
+      webhook_url: ""           # Optional webhook
+      
+    telegram:
+      enabled: true
+      
+    email:
+      enabled: false
+      
+  # Alert Types
+  alerts:
+    trade_signals: true
+    position_updates: true
+    risk_warnings: true
+    system_status: true
+    performance_reports: true
+    
+  # Frequency Limits
+  rate_limits:
+    max_alerts_per_hour: 20
+    cooldown_similar_alerts: 300  # secunde
+
+# =============================================================================
+# BACKTESTING
+# =============================================================================
+
+backtesting:
+  # Data Range
+  start_date: "2024-01-01"
+  end_date: "2024-12-31"
+  initial_balance: 10000       # USDT
+  
+  # Execution
+  commission: 0.001           # 0.1% commisssion
+  slippage: 0.0005           # 0.05% slippage
+  
+  # Reporting
+  generate_reports: true
+  save_trades: true
+  plot_results: true
+
+# =============================================================================
+# PERFORMANCE MONITORING
+# =============================================================================
+
+monitoring:
+  # Metrics Collection
+  metrics:
+    enable_prometheus: true
+    collection_interval: 60    # secunde
+    
+  # Performance Targets
+  targets:
+    min_win_rate: 0.6          # 60%
+    min_profit_factor: 1.5
+    max_drawdown: 0.15         # 15%
+    
+  # Alerts
+  performance_alerts:
+    drawdown_threshold: 0.10    # 10%
+    consecutive_losses: 5
+    daily_loss_threshold: 0.05  # 5%
+
+# =============================================================================
+# LOGGING
+# =============================================================================
+
+logging:
+  level: "INFO"               # DEBUG, INFO, WARNING, ERROR
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file_rotation: "100 MB"
+  retention_days: 30
+  
+  # Component Logging
+  components:
+    trading_engine: "INFO"
+    risk_manager: "INFO"
+    market_data: "WARNING"
+    notifications: "INFO"
+    mcp_servers: "WARNING"
+
+# =============================================================================
+# ADVANCED FEATURES
+# =============================================================================
+
+advanced:
+  # Machine Learning
+  ml:
+    enable_ml_predictions: false
+    model_retrain_interval: 168  # ore
+    feature_engineering: true
+    
+  # Portfolio Optimization
+  portfolio:
+    enable_rebalancing: true
+    rebalance_interval: 24     # ore
+    target_allocation:
+      "BTCUSDT": 0.4
+      "ETHUSDT": 0.3
+      "EGLDUSDT": 0.2
+      "others": 0.1
+      
+  # Social Trading
+  social:
+    enable_sentiment_analysis: true
+    twitter_monitoring: false
+    reddit_monitoring: false
+    
+  # Arbitrage
+  arbitrage:
+    enable_exchange_arbitrage: false
+    min_profit_threshold: 0.5   # %
+    max_execution_time: 30      # secunde
