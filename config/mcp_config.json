@@ -1,0 +1,89 @@
+{
+  "mcpServers": {
+    "crypto-data": {
+      "command": "npx",
+      "args": ["-y", "@mcp-server/crypto-prices@latest"],
+      "description": "Server pentru preturi crypto real-time",
+      "enabled": true
+    },
+    "binance-api": {
+      "command": "python",
+      "args": ["src/mcp/binance_server.py"],
+      "description": "Server MCP pentru integrare Binance API",
+      "enabled": true,
+      "env": {
+        "BINANCE_API_KEY": "${BINANCE_API_KEY}",
+        "BINANCE_SECRET_KEY": "${BINANCE_SECRET_KEY}"
+      }
+    },
+    "technical-analysis": {
+      "command": "python",
+      "args": ["src/mcp/technical_analysis_server.py"],
+      "description": "Server pentru analiza tehnica avansata",
+      "enabled": true
+    },
+    "trading-signals": {
+      "command": "python",
+      "args": ["src/mcp/trading_signals_server.py"],
+      "description": "Generator de semnale de trading cu AI",
+      "enabled": true
+    },
+    "portfolio-tracker": {
+      "command": "python",
+      "args": ["src/mcp/portfolio_server.py"],
+      "description": "Tracking portofoliu si pozitii",
+      "enabled": true
+    },
+    "risk-manager": {
+      "command": "python",
+      "args": ["src/mcp/risk_management_server.py"],
+      "description": "Management risc si calculare pozitii",
+      "enabled": true
+    },
+    "notification-center": {
+      "command": "python",
+      "args": ["src/mcp/notification_server.py"],
+      "description": "Server pentru notificari Discord/Telegram",
+      "enabled": true,
+      "env": {
+        "DISCORD_BOT_TOKEN": "${DISCORD_BOT_TOKEN}",
+        "TELEGRAM_BOT_TOKEN": "${TELEGRAM_BOT_TOKEN}"
+      }
+    },
+    "market-scanner": {
+      "command": "python",
+      "args": ["src/mcp/market_scanner_server.py"],
+      "description": "Scanner pentru oportunitati de trading",
+      "enabled": true
+    },
+    "web-scraper": {
+      "command": "npx",
+      "args": ["-y", "@mcp-server/playwright@latest"],
+      "description": "Web scraping pentru sentiment analysis",
+      "enabled": false
+    },
+    "google-search": {
+      "command": "npx",
+      "args": ["-y", "@mcp-server/google-search@latest"],
+      "description": "Cautare Google pentru news crypto",
+      "enabled": true
+    }
+  },
+  "serverConfigs": {
+    "timeout": 30,
+    "retries": 3,
+    "concurrentServers": 5,
+    "logLevel": "INFO",
+    "enableMetrics": true
+  },
+  "features": {
+    "autoRestart": true,
+    "healthChecks": true,
+    "loadBalancing": false,
+    "caching": true,
+    "rateLimit": {
+      "enabled": true,
+      "requestsPerMinute": 60
+    }
+  }
+}
