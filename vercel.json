@@ -2,18 +2,24 @@
   "version": 2,
   "builds": [
     {
-      "src": "web/api.py",
-      "use": "@vercel/python"
+      "src": "web/api_vercel.py",
+      "use": "@vercel/python",
+      "config": {
+        "maxLambdaSize": "15mb"
+      }
     },
     {
       "src": "web/app.py",
-      "use": "@vercel/python"
+      "use": "@vercel/python",
+      "config": {
+        "maxLambdaSize": "15mb"
+      }
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "web/api.py"
+      "dest": "web/api_vercel.py"
     },
     {
       "src": "/(.*)",
@@ -21,14 +27,17 @@
     }
   ],
   "env": {
-    "PYTHONPATH": "."
+    "PYTHONPATH": ".",
+    "STREAMLIT_SERVER_PORT": "8501",
+    "STREAMLIT_SERVER_ADDRESS": "0.0.0.0"
   },
   "functions": {
-    "web/api.py": {
+    "web/api_vercel.py": {
       "runtime": "python3.9"
     },
     "web/app.py": {
       "runtime": "python3.9"
     }
-  }
+  },
+  "installCommand": "pip install -r requirements-vercel.txt"
 }
