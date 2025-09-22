@@ -1,0 +1,34 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "web/api.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "web/app.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "web/api.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "web/app.py"
+    }
+  ],
+  "env": {
+    "PYTHONPATH": "."
+  },
+  "functions": {
+    "web/api.py": {
+      "runtime": "python3.9"
+    },
+    "web/app.py": {
+      "runtime": "python3.9"
+    }
+  }
+}
